@@ -9,15 +9,19 @@
            fetch="https://gitlab.com/PixelOS-AOSP"
            revision="refs/heads/fifteen" />
 
+  <remote  name="k"
+           fetch="https://github.com/Krishna-s-Hub"
+           revision="refs/heads/fifteen" />
+
   <!-- Rootdir -->
-  <project path="bionic" name="bionic" groups="pdk" remote="PixelOS" />
-  <project path="art" name="art" groups="pdk" remote="PixelOS" />
+  <project path="bionic" name="pos_bionic" groups="pdk" remote="k" />
+  <project path="art" name="pos_art" groups="pdk" remote="k" />
 
   <!-- Bootable -->
   <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="PixelOS" />
 
   <!-- Build -->
-  <project path="build/make" name="build" groups="pdk" remote="PixelOS">
+  <project path="build/make" name="pos_build" groups="pdk" remote="k">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
     <linkfile src="core" dest="build/core" />
@@ -34,8 +38,8 @@
   <!-- project path="external/jemalloc_new" name="external_jemalloc_new" groups="pdk" remote="PixelOS" / -->
 
   <!-- Frameworks -->
-  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="PixelOS" />
-  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="PixelOS" />
+  <project path="frameworks/av" name="pos_av" groups="pdk" remote="k" />
+  <project path="frameworks/base" name="pos_base" groups="pdk-cw-fs,pdk-fs" remote="k" />
   <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="PixelOS" />
   <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="PixelOS" />
 
@@ -43,7 +47,7 @@
   <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" groups="generic_fs,pixel" remote="PixelOS" />
 
   <!-- Packages -->
-  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="PixelOS" />
+  <project path="packages/apps/Settings" name="pos_Settings" groups="pdk-fs" remote="k" />
   <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk" remote="PixelOS" />
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="PixelOS" />
 
@@ -62,7 +66,7 @@
   <project path="packages/apps/TouchGestures" name="packages_apps_TouchGestures" remote="PixelOS" />
 
   <!-- Vendor -->
-  <project path="vendor/aosp" name="vendor_aosp" remote="PixelOS" />
+  <project path="vendor/aosp" name="pos_vendor_aosp" remote="k" />
   <project path="vendor/custom-preference" name="vendor_custom-preference" remote="PixelOS" />
   <project path="vendor/gms" name="vendor_gms" clone-depth="1" remote="PixelOS-Gitlab" />
 
